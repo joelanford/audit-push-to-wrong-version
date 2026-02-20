@@ -20,6 +20,7 @@ done
 
 IMAGES=(registry.redhat.io/redhat/redhat-operator-index)
 VERSIONS=(v4.17 v4.16 v4.15 v4.14 v4.13 v4.12)
+ORIGINAL=registry-proxy.engineering.redhat.com/rh-osbs/iib@sha256:210fa4ca556f36688bcab0bf949b698618f44380dc8f1e8a214ee62474664b7d  # needs VPN
 
 get_image_digest() {
     local image_ref=$1
@@ -62,6 +63,28 @@ create_indexignore() {
 .metadata/
 EOF
 }
+
+if [[ ! -d catalogs-original ]]; then
+    image_ref="${ORIGINAL}"
+    version="${VERSIONS[0]}"
+    dir_name="catalogs-original/${version}"
+
+    echo "Ensuring latest $image_ref exists in $dir_name"
+    mkdir -p "${dir_name}"
+    create_indexignore "${dir_name}"
+
+    if ! opm render "${image_ref}" > "${dir_name}/catalog.json"; then
+        echo "Failed to download $image_ref"
+        exit 1
+    fi
+
+    for copy_version in ${VERSIONS[@]}; do
+        copy_dir="catalogs-original/${copy_version}"
+        if [[ ! -e "${copy_dir}" ]]; then
+            ln -vs "${dir_name}" "${copy_dir}"
+        fi
+    done
+fi
 
 # If catalogs-latest directory already exists, move it to catalogs-{yyyy}-{mm}-{dd} based on its modtime
 if [[ -d catalogs-latest ]]; then
