@@ -6,10 +6,10 @@ set -o pipefail
 
 # Change-log:
 # * 2026-02-13 v1 (sha256 5d2da3dad20aa839a6c261c78af5b09d89364190b55da67a8ebdf75d26db33aa)
-# * 2026-02-27 v2 (sha256 in KCS; drop this line and hash to get 89cf48e975bca7993985f528c34d95465f80d5a300c013c0ce68749d63237a1c)
+# * 2026-02-27 v2 (sha256 in KCS; drop this line and hash to get d82b7c94c0f02d67def62d27186507d61fac0e773cb90a8f977ba7b73e31ca0e)
 #   * aws-efs-csi-driver-operator.v4.18.0-202602040643 added to 4.14 concerns (v1 had accidentally dropped it for testing)
 #   * some rolling-stream operators (but not yet all) have committed to supporting identical catalogs on all supported OCP releases, https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream
-#   * some operators (e.g. openshift-builds-operator) have already shipped sufficient versions into older catalogs to make the incident-induced skew a non-issue for those operators.
+#   * some operators (e.g. cluster-observability-operator) have already shipped sufficient versions into older catalogs to make the incident-induced skew a non-issue for those operators.
 #   * use operators.operators.coreos.com instead of direct clusterserviceversions.operators.coreos.com for lookup, so we don't have to iterate over namespaces.
 
 CLUSTER_VERSION="$(oc get --output jsonpath='{.status.desired.version}' clusterversion version)"
@@ -9857,7 +9857,7 @@ WARNINGS="$(oc get -o jsonpath='{range .items[*].status.components.refs[?(.kind 
 NO_LONGER_CONCERNING="$(printf '%s' "${WARNINGS}" | sort | comm -2 -3 - <(printf '%s' "${CURRENTLY_CONCERNING}" | sort))"
 if test -n "${NO_LONGER_CONCERNING}"
 then
-  printf 'The v1 script was concerned about these operators, but they have since been added to %s catalogs:\n%s\n\n' "${MAJOR_MINOR}" "${NO_LONGER_CONCERNING}"
+  printf 'The v1 script was concerned about these operators, but they have since been added to %s catalogs.  No cluster admin action required:\n%s\n\n' "${MAJOR_MINOR}" "${NO_LONGER_CONCERNING}"
   WARNINGS="$(printf '%s' "${WARNINGS}" | sort | join - <(printf '%s' "${CURRENTLY_CONCERNING}" | sort))"
 fi
 
@@ -9865,7 +9865,7 @@ ROLLING_STREAM_REGEXP='^\(network-observability-operator\|\)[.]'
 ROLLING_STREAM="$(printf '%s' "${WARNINGS}" | (grep "${ROLLING_STREAM_REGEXP}" || true))"
 if test -n "${ROLLING_STREAM}"
 then
-  printf 'The v1 script was concerned about these rolling-stream operators, but they will be included in future %s catalogs:\n%s\n\n' "${MAJOR_MINOR}" "${ROLLING_STREAM}"
+  printf 'The v1 script was concerned about these rolling-stream operators, but they will be included in future %s catalogs.  No cluster admin action required:\n%s\n\n' "${MAJOR_MINOR}" "${ROLLING_STREAM}"
   WARNINGS="$(printf '%s' "${WARNINGS}" | (grep -v "${ROLLING_STREAM_REGEXP}" || true))"
 fi
 
@@ -9875,5 +9875,5 @@ then
   exit 0
 fi
 
-printf 'Concerning 4.18 ClusterServiceVersions detected:\n%s\n' "${WARNINGS}"
+printf 'Concerning 4.18 ClusterServiceVersions detected (see https://access.redhat.com/solutions/7137887 for remediation options):\n%s\n' "${WARNINGS}"
 exit 1
