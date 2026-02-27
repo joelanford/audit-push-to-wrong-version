@@ -22,6 +22,7 @@ lifecycle-agent	https://access.redhat.com/solutions/7138300
 lightspeed-operator	https://access.redhat.com/solutions/7138415
 logic-operator-rhel8	Impacted version of the operator is Out of Support
 loki-operator	https://access.redhat.com/solutions/7138224
+lvms-operator	https://access.redhat.com/solutions/7138843
 mcg-operator	https://access.redhat.com/solutions/7138647
 metallb-operator	https://access.redhat.com/solutions/7138208
 mtv-operator	https://access.redhat.com/solutions/7138260
@@ -41,7 +42,7 @@ openshift-builds-operator	Remediated via Red Hat catalog updates. If on OCP 4.14
 openshift-cert-manager-operator	https://access.redhat.com/solutions/7138306
 openshift-pipelines-operator-rh	https://access.redhat.com/solutions/7138381
 openshift-secondary-scheduler-operator	https://access.redhat.com/solutions/7138396
-power-monitoring-operator	Rolling Stream Operator[*] | Tech Preview
+power-monitoring-operator	Tech Preview[*]
 ptp-operator	https://access.redhat.com/solutions/7138235
 quay-bridge-operator	Impacted version of the operator is Out of Support
 quay-operator	Impacted version of the operator is Out of Support
@@ -50,7 +51,7 @@ redhat-oadp-operator	https://access.redhat.com/solutions/7138407
 rhods-operator	https://access.redhat.com/solutions/7138416
 rook-ceph-operator	https://access.redhat.com/solutions/7138647
 run-once-duration-override-operator	https://access.redhat.com/solutions/7138396
-sandboxed-containers-operator	Only impacted TP on baremetal and AWS | Rolling Stream[*]
+sandboxed-containers-operator	https://access.redhat.com/solutions/7138796
 secrets-store-csi-driver-operator	https://access.redhat.com/solutions/7138378
 service-telemetry-operator	https://access.redhat.com/solutions/7138302
 servicemeshoperator	https://access.redhat.com/solutions/7138392
@@ -58,8 +59,9 @@ servicemeshoperator3	https://access.redhat.com/solutions/7138393
 smart-gateway-operator	https://access.redhat.com/solutions/7138302
 sriov-network-operator	https://access.redhat.com/solutions/7138209
 submariner	Reach out to Red Hat Support
+tempo-product	No action needed for the cluster admin. Remediated via Red Hat catalog updates.[**]
 topology-aware-lifecycle-manager	https://access.redhat.com/solutions/7138301
-trustee-operator	Rolling Stream Operator[*] | Tech Preview
+trustee-operator	Tech Preview[*]
 vertical-pod-autoscaler	https://access.redhat.com/solutions/7138413
 volsync-product	Reach out to Red Hat Support
 web-terminal	https://access.redhat.com/solutions/7138398
