@@ -24,11 +24,13 @@ set -o pipefail
 
 # Change-log:
 # * 2026-02-13 v1 (sha256 5d2da3dad20aa839a6c261c78af5b09d89364190b55da67a8ebdf75d26db33aa)
-# * 2026-02-27 v2 (sha256 in KCS; drop this line and hash to get d82b7c94c0f02d67def62d27186507d61fac0e773cb90a8f977ba7b73e31ca0e)
+# * 2026-02-27 v2 (sha256 687f69892ad0a308b1e92d077511affd34bbfa50903cd97247b009c37e96ffb1)
 #   * aws-efs-csi-driver-operator.v4.18.0-202602040643 added to 4.14 concerns (v1 had accidentally dropped it for testing)
 #   * some rolling-stream operators (but not yet all) have committed to supporting identical catalogs on all supported OCP releases, https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream
 #   * some operators (e.g. cluster-observability-operator) have already shipped sufficient versions into older catalogs to make the incident-induced skew a non-issue for those operators.
 #   * use operators.operators.coreos.com instead of direct clusterserviceversions.operators.coreos.com for lookup, so we don't have to iterate over namespaces.
+# * 2026-03-11 v3 (sha256 in KCS; drop this line and hash to get b66de2ea57c79440c0f98a2f50fbe560da0c9c207bf2d03bdcdd6b3ac741ea97)
+#   * more operators (e.g. local-storage-operator) have now shipped sufficient versions into older catalogs to make the incident-induced skew a non-issue for those operators.
 
 CLUSTER_VERSION="\$(oc get --output jsonpath='{.status.desired.version}' clusterversion version)"
 MAJOR_MINOR="\${CLUSTER_VERSION%[.][^.]*}"
