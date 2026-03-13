@@ -1,7 +1,8 @@
 3scale-operator	https://access.redhat.com/solutions/7138429
-advanced-cluster-management	Reach out to Red Hat Support
+advanced-cluster-management	https://access.redhat.com/solutions/7138953
 ansible-automation-platform-operator	Reach out to Red Hat Support
 apicast-operator	https://access.redhat.com/solutions/7138433
+authorino-operator	The 4.18 operator version is now officially supported as the default version for previous OpenShift minor releases and is available via Red Hat catalog updates. The usual operator update options apply. For versions 4.15 and below - reach out to Red Hat Support
 aws-efs-csi-driver-operator	https://access.redhat.com/solutions/7138293
 cephcsi-operator	https://access.redhat.com/solutions/7138647
 cluster-kube-descheduler-operator	https://access.redhat.com/solutions/7138396
@@ -9,12 +10,15 @@ cluster-logging	https://access.redhat.com/solutions/7138224
 clusterresourceoverride	https://access.redhat.com/solutions/7138414
 container-security-operator	Impacted version of the operator is Out of Support
 devspaces	https://access.redhat.com/solutions/7138371
-devworkspace-operator	Reach out to Red Hat Support
+devworkspace-operator	https://access.redhat.com/solutions/7139090
 dpu-network-operator	Impacted version of the operator is Out of Support
 gatekeeper-operator-product	Reach out to Red Hat Support
+fence-agents-remediation	https://access.redhat.com/solutions/7139036
 gcp-filestore-csi-driver-operator	https://access.redhat.com/solutions/7138311
 ingress-node-firewall	https://access.redhat.com/solutions/7138395
 jaeger-product	Impacted version of the operator is Out of Support
+kernel-module-management	https://access.redhat.com/solutions/7138933
+kernel-module-management-hub	https://access.redhat.com/solutions/7138933
 kiali-ossm	https://access.redhat.com/solutions/7138322
 kubernetes-nmstate-operator	https://access.redhat.com/solutions/7138404
 kubevirt-hyperconverged	https://access.redhat.com/solutions/7138312
@@ -23,12 +27,15 @@ lightspeed-operator	https://access.redhat.com/solutions/7138415
 logic-operator-rhel8	Impacted version of the operator is Out of Support
 loki-operator	https://access.redhat.com/solutions/7138224
 lvms-operator	https://access.redhat.com/solutions/7138843
+machine-deletion-remediation	https://access.redhat.com/solutions/7139036
 mcg-operator	https://access.redhat.com/solutions/7138647
 metallb-operator	https://access.redhat.com/solutions/7138208
 mtv-operator	https://access.redhat.com/solutions/7138260
-multicluster-engine	Reach out to Red Hat Support
+multicluster-engine	https://access.redhat.com/solutions/7138953
 multicluster-global-hub-operator-rh	Reach out to Red Hat Support
 nfd	https://access.redhat.com/solutions/7138589
+node-healthcheck-operator	https://access.redhat.com/solutions/7139036
+node-maintenance-operator	https://access.redhat.com/solutions/7139036
 numaresources-operator	https://access.redhat.com/solutions/7138297
 ocs-client-operator	https://access.redhat.com/solutions/7138647
 ocs-operator	https://access.redhat.com/solutions/7138647
@@ -48,18 +55,21 @@ quay-bridge-operator	Impacted version of the operator is Out of Support
 quay-operator	Impacted version of the operator is Out of Support
 recipe	https://access.redhat.com/solutions/7138647
 redhat-oadp-operator	https://access.redhat.com/solutions/7138407
+rhbk-operator	Impacted version of the operator is Out of Support
+rhdh	Impacted version of the operator is Out of Support
 rhods-operator	https://access.redhat.com/solutions/7138416
+rhtas-operator	https://access.redhat.com/solutions/7139111
 rook-ceph-operator	https://access.redhat.com/solutions/7138647
 run-once-duration-override-operator	https://access.redhat.com/solutions/7138396
 sandboxed-containers-operator	https://access.redhat.com/solutions/7138796
 secrets-store-csi-driver-operator	https://access.redhat.com/solutions/7138378
+self-node-remediation	https://access.redhat.com/solutions/7139036
 service-telemetry-operator	https://access.redhat.com/solutions/7138302
 servicemeshoperator	https://access.redhat.com/solutions/7138392
 servicemeshoperator3	https://access.redhat.com/solutions/7138393
 smart-gateway-operator	https://access.redhat.com/solutions/7138302
 sriov-network-operator	https://access.redhat.com/solutions/7138209
-submariner	Reach out to Red Hat Support
-tempo-product	No action needed for the cluster admin. Remediated via Red Hat catalog updates.[**]
+submariner	https://access.redhat.com/solutions/7138953
 topology-aware-lifecycle-manager	https://access.redhat.com/solutions/7138301
 trustee-operator	Tech Preview[*]
 vertical-pod-autoscaler	https://access.redhat.com/solutions/7138413
